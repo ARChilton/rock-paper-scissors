@@ -7,7 +7,40 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 	</head>
 	<body>
-		<h1>You are ready to go! :)</h1>
-		<h2>Good luck!</h2>
+		<div id="contentLayout">
+			<section id="player1" class="player">
+				<h1>Player 1</h1>
+				<div id="player1ImgContainer" class="imgContainer">
+					<img id="player1Img" />
+				</div>
+			</section>
+			<div></div>
+			<section id="player2" class="player">
+				<h1>Player 2</h1>
+				<div id="player2ImgContainer" class="imgContainer">
+					<img id="player2Img" />
+				</div>
+			</section>
+			<div id="buttonContainer"></div>
+			<table id="scoreboard">
+				<thead>
+					<tr>
+						<th colspan="3">Scoreboard</th>
+					</tr>
+					<tr>
+						<th>Player 1</th>
+						<th>Draws</th>
+						<th>Player 2</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr id="score">
+						<td id="player1Score">0</td>
+						<td id="draws">0</td>
+						<td id="player2Score">0</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</body>
 </html>
