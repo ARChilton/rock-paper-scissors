@@ -1,9 +1,189 @@
 @import './style.css';
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+$background: rgba(0, 0, 0, 0.001);
+$player1: red;
+$player2: blue;
+$winBackground: #fff;
+$tablet: 768px;
 
+html {
+	height: 100%;
+}
 body {
-	background-color: green;
-
+	background-color: $background;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	width: 100%;
+	font-family: 'Handlee', cursive;
+	position: relative;
 	h1 {
 		color: white;
+		font-size: 2rem;
+		font-family: inherit;
 	}
+}
+
+button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	text-align: center;
+	font-family: inherit;
+	/* white-space: nowrap; */
+	vertical-align: middle;
+	user-select: none;
+	border: 1px solid transparent;
+	padding: 0.375rem 0.75rem;
+	font-size: 0.9375rem;
+	line-height: 1.84615385;
+	transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out,
+		border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+	text-transform: uppercase;
+	cursor: pointer;
+	font-weight: 600;
+	letter-spacing: 0.03em;
+	border: solid 4px #41403e;
+	align-self: center;
+	background: transparent;
+	transition: all 0.5s ease;
+	color: #41403e;
+	font-size: 1rem;
+	letter-spacing: 1px;
+	outline: none;
+	box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.3);
+	border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+	&:hover {
+		background-color: $player1;
+		color: #fff;
+		box-shadow: 2px 8px 4px -6px rgba(0, 0, 0, 0.3);
+	}
+}
+
+.player {
+	// height: 80vh;
+	width: 100%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	border-radius: 8px;
+
+	h1 {
+		text-align: center;
+		justify-self: center;
+		width: 100%;
+		display: block;
+	}
+	.imgContainer {
+		height: 30vh;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 1rem;
+		@media (min-width: $tablet) {
+			height: 50vh;
+		}
+	}
+	img {
+		justify-self: center;
+		align-self: center;
+		max-height: 100%;
+		max-width: 100%;
+		margin: 1rem;
+		border-radius: 3px;
+	}
+}
+
+#player1 {
+	background-color: $player1;
+	-ms-grid-column: 1;
+}
+
+#player2 {
+	background-color: $player2;
+	-ms-grid-column: 3;
+}
+
+#contentLayout {
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: 1fr 10px 1fr;
+	grid-template-columns: 1fr 10px 1fr;
+	padding: 1rem;
+	width: 100%;
+	align-self: center;
+}
+
+#buttonContainer {
+	-ms-grid-column-span: 3;
+	grid-column: span 3;
+	height: 100px;
+	-ms-grid-column: 1;
+	-ms-grid-row: 2;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	@media (min-width: $tablet) {
+		-ms-grid-column-span: 1;
+		grid-column: span 1;
+	}
+}
+#winContainer {
+	position: absolute;
+	top: 30%;
+	left: 0;
+	right: 0;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+}
+
+#winDialog {
+	background-color: #fff;
+	color: #000;
+	align-self: center;
+	justify-self: center;
+	text-transform: uppercase;
+	// position: absolute;
+	// top: 30%;
+	border-radius: 3px;
+	padding: 1rem;
+	font-weight: bold;
+}
+
+#scoreboard {
+	-ms-grid-column: 1;
+	grid-column: 1;
+	-ms-grid-row: 3;
+	grid-row: 3;
+	-ms-grid-column-span: 3;
+	grid-column: span 3;
+	width: 100%;
+	text-align: center;
+	align-self: center;
+	font-size: 1rem;
+	@media (min-width: $tablet) {
+		-ms-grid-column: 3;
+		grid-column: 3;
+		-ms-grid-row: 2;
+		grid-row: 2;
+	}
+	thead {
+		font-size: 1.5rem;
+	}
+	tbody {
+		font-size: 1.2rem;
+	}
+}
+
+.hide {
+	display: none;
 }
