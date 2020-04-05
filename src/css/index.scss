@@ -56,6 +56,7 @@ button {
 	outline: none;
 	box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.3);
 	border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+	margin-top: 1rem;
 	&:hover {
 		background-color: $player1;
 		color: #fff;
@@ -115,6 +116,7 @@ button {
 	display: grid;
 	-ms-grid-columns: 1fr 10px 1fr;
 	grid-template-columns: 1fr 10px 1fr;
+	grid-template-rows: auto;
 	padding: 1rem;
 	width: 100%;
 	align-self: center;
@@ -123,7 +125,6 @@ button {
 #buttonContainer {
 	-ms-grid-column-span: 3;
 	grid-column: span 3;
-	height: 100px;
 	-ms-grid-column: 1;
 	-ms-grid-row: 2;
 	display: flex;
@@ -131,6 +132,7 @@ button {
 	justify-content: space-around;
 	align-items: center;
 	flex-wrap: wrap;
+	margin-top: 1rem;
 	@media (min-width: $tablet) {
 		-ms-grid-column-span: 1;
 		grid-column: span 1;
@@ -186,4 +188,7 @@ button {
 
 .hide {
 	display: none;
+}
+.noClick {
+	pointer-events: none;
 }
