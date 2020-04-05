@@ -1,8 +1,8 @@
-import "core-js/stable";
-import "regenerator-runtime/runtime";
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
 
-import logger from './logger';
+import '../css/index.scss'
+import loadButtons from './buttonControl/buttonControl'
+import gameConstants from './gameConstants/gameConstants'
 
-import '../css/index.scss';
-
-logger('it works well!');
+loadButtons(gameConstants)
