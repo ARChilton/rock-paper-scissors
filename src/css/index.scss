@@ -11,7 +11,6 @@ html {
 }
 body {
 	background-color: $background;
-	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -19,6 +18,7 @@ body {
 	width: 100%;
 	font-family: 'Handlee', cursive;
 	position: relative;
+	overflow-y: auto;
 	h1 {
 		color: white;
 		font-size: 1.5rem;
@@ -149,7 +149,7 @@ button {
 }
 #winContainer {
 	position: absolute;
-	top: 30%;
+	top: 20%;
 	left: 0;
 	right: 0;
 	display: flex;
@@ -184,6 +184,7 @@ button {
 	text-align: center;
 	align-self: center;
 	font-size: 1rem;
+	margin-top: 1rem;
 	@media (min-width: $tablet) {
 		-ms-grid-column: 3;
 		grid-column: 3;
