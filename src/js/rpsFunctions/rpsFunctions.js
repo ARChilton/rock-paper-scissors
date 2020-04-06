@@ -119,10 +119,10 @@ const playGame = (
 	winDialog.innerHTML = 3
 	setTimeout(() => {
 		winDialog.innerHTML = 2
-	}, 1000)
+	}, 700)
 	setTimeout(() => {
 		winDialog.innerHTML = 1
-	}, 2000)
+	}, 1400)
 	setTimeout(() => {
 		// reveals who won
 		winDialog.innerHTML = wonBy
@@ -147,7 +147,7 @@ const playGame = (
 		buttons.forEach((btn) => {
 			btn.className = ''
 		})
-	}, 3000)
+	}, 2100)
 }
 
 export default playGame
