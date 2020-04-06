@@ -44,7 +44,7 @@ export const winner = (player1, player2, gameRules = gameConstants) => {
  */
 export const updateImg = (gameRules = gameConstants, index, player, reset) => {
 	const img = document.getElementById(`player${player}Img`)
-	const gameSelection = gameRules[index]
+	const gameSelection = gameRules[index] || {}
 	if (reset) {
 		img.className = 'hide'
 		return 'hidden'
@@ -69,10 +69,10 @@ export const updateImg = (gameRules = gameConstants, index, player, reset) => {
  * resets the images / hides them
  * I would test this using cypress
  */
-const resetImgs = () => {
+export const resetImgs = () => {
 	try {
-		updateImg(null, null, 1, true)
-		updateImg(null, null, 2, true)
+		updateImg(undefined, null, 1, true)
+		updateImg(undefined, null, 2, true)
 	} catch (e) {
 		return false
 	}

@@ -1,4 +1,4 @@
-import { computerChooses, winner, updateImg } from './rpsFunctions'
+import { computerChooses, winner, updateImg, resetImgs } from './rpsFunctions'
 import gameConstants from '../gameConstants/gameConstants'
 
 describe('computerChooses()', () => {
@@ -63,4 +63,14 @@ describe('updateImg()', () => {
 		)
 	})
 	// repeat for all img options inc. lizard spock images
+})
+
+describe('resetImgs()', () => {
+	it('should add class hide to both images', () => {
+		document.body.innerHTML = `<img id="player1Img"><img id="player2Img">`
+		resetImgs()
+		expect(document.body.innerHTML).toEqual(
+			`<img id="player1Img" class="hide"><img id="player2Img" class="hide">`
+		)
+	})
 })
