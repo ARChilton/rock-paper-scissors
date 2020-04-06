@@ -54,6 +54,7 @@ const updateImg = (gameRules = gameConstants, index, player, reset) => {
 	img.src = gameSelection.img
 	img.alt = gameSelection.text
 	img.onerror = () => {
+		// to show jpg for ie11
 		const { jpeg } = gameSelection
 		if (jpeg && jpeg !== img.src) {
 			img.src = jpeg
