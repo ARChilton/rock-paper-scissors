@@ -54,7 +54,7 @@ const updateImg = (gameRules = gameConstants, index, player, reset) => {
 	img.src = gameSelection.img
 	img.alt = gameSelection.text
 	img.onerror = () => {
-		const { jpeg } = gameRules[index]
+		const { jpeg } = gameSelection
 		if (jpeg && jpeg !== img.src) {
 			img.src = jpeg
 		} else {
