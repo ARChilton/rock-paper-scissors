@@ -7,6 +7,7 @@ import gameConstants from '../gameConstants/gameConstants'
 
 /**
  * adds buttons according to the game choices available
+ * I would test this using cypress
  * @param {[{}]} gameChoices all options available to choose
  */
 const loadButtons = (gameChoices, lizardSpock) => {
