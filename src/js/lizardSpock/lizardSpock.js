@@ -3,8 +3,10 @@ import loadButtons from '../buttonControl/buttonControl'
 import { lizardSpock } from '../gameConstants/gameConstants'
 
 export const removeBtns = () => {
-	const buttons = document.getElementsByTagName('buttons')
-	buttons.forEach((el) => removeElement(el))
+	const buttons = document.getElementsByTagName('button')
+	while (buttons.length > 0) {
+		removeElement(buttons[0])
+	}
 }
 
 const switchToLizardSpock = () => {
