@@ -42,7 +42,7 @@ export const winner = (player1, player2, gameRules = gameConstants) => {
  * @param {number} player
  * @param {boolean} reset
  */
-const updateImg = (gameRules = gameConstants, index, player, reset) => {
+export const updateImg = (gameRules = gameConstants, index, player, reset) => {
 	const img = document.getElementById(`player${player}Img`)
 	const gameSelection = gameRules[index]
 	if (reset) {

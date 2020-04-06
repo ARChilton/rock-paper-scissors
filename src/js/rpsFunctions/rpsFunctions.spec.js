@@ -1,4 +1,5 @@
-import { computerChooses, winner } from './rpsFunctions'
+import { computerChooses, winner, updateImg } from './rpsFunctions'
+import gameConstants from '../gameConstants/gameConstants'
 
 describe('computerChooses()', () => {
 	it('should select a number between 0 and 2', () => {
@@ -43,4 +44,23 @@ describe('winner()', () => {
 		expect(paper).toEqual(output)
 		expect(scissor).toEqual(output)
 	})
+})
+
+describe('updateImg()', () => {
+	it('should update the player 1 img src and alt', () => {
+		document.body.innerHTML = `<img id="player1Img">`
+		updateImg(gameConstants, 0, 1)
+		expect(document.body.innerHTML).toEqual(
+			`<img id="player1Img" src="test-file-stub" alt="rock">`
+		)
+	})
+	// repeat for all img options
+	it('should update the player 2 img src and alt', () => {
+		document.body.innerHTML = `<img id="player2Img">`
+		updateImg(gameConstants, 0, 2)
+		expect(document.body.innerHTML).toEqual(
+			`<img id="player2Img" src="test-file-stub" alt="rock">`
+		)
+	})
+	// repeat for all img options inc. lizard spock images
 })
