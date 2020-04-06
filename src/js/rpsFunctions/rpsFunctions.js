@@ -36,6 +36,7 @@ export const winner = (player1, player2, gameRules = gameConstants) => {
 
 /**
  * updates the images for the result
+ * I would test this with a tool like cypress
  * @param {[{}]} gameRules
  * @param {number} index
  * @param {number} player
@@ -58,19 +59,27 @@ const updateImg = (gameRules = gameConstants, index, player, reset) => {
 			console.warn('no replacement image')
 		}
 	}
-	return true
+	return { src: img.src, class: img.className }
 }
 
 /**
  * resets the images / hides them
+ * I would test this using cypress
  */
 const resetImgs = () => {
-	updateImg(null, null, 1, true)
-	updateImg(null, null, 2, true)
+	try {
+		updateImg(null, null, 1, true)
+		updateImg(null, null, 2, true)
+	} catch (e) {
+		return false
+	}
+
+	return true
 }
 
 /**
  * resets the game state
+ * I would test this using cypress
  */
 export const resetState = () => {
 	currentScore.p1 = 0
@@ -81,10 +90,12 @@ export const resetState = () => {
 	const winStatement = document.getElementById('winContainer')
 	// for ie - removeChild() because no remove()
 	removeElement(winStatement)
+	return currentScore
 }
 
 /**
  * runs the game
+ * I would test this using cypress
  * @param {number} player1
  * @param {number} player2
  * @param {[{}]} gameRules game options available
