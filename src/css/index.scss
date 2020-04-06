@@ -113,11 +113,13 @@ button {
 #player1 {
 	background-color: $player1;
 	-ms-grid-column: 1;
+	grid-column: 1;
 }
 
 #player2 {
 	background-color: $player2;
 	-ms-grid-column: 3;
+	grid-column: 3;
 }
 
 #contentLayout {
@@ -136,6 +138,7 @@ button {
 	grid-column: span 3;
 	-ms-grid-column: 1;
 	-ms-grid-row: 2;
+	grid-row: 2;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
