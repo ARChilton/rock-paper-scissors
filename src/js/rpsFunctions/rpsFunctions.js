@@ -44,13 +44,15 @@ export const winner = (player1, player2, gameRules = gameConstants) => {
  */
 const updateImg = (gameRules = gameConstants, index, player, reset) => {
 	const img = document.getElementById(`player${player}Img`)
+	const gameSelection = gameRules[index]
 	if (reset) {
 		img.className = 'hide'
 		return 'hidden'
 	} else if (img.className === 'hide') {
 		img.className = ''
 	}
-	img.src = gameRules[index].img
+	img.src = gameSelection.img
+	img.alt = gameSelection.text
 	img.onerror = () => {
 		const { jpeg } = gameRules[index]
 		if (jpeg && jpeg !== img.src) {
