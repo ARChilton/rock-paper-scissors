@@ -3,17 +3,20 @@ import playGame, {
 	resetState,
 } from '../rpsFunctions/rpsFunctions'
 import switchToLizardSpock, { removeBtns } from '../lizardSpock/lizardSpock'
+import gameConstants from '../gameConstants/gameConstants'
 
 /**
  * adds buttons according to the game choices available
  * @param {[{}]} gameChoices all options available to choose
  */
 const loadButtons = (gameChoices, lizardSpock) => {
+	const numberOfOptions = gameChoices.length
 	const loadDefaultButtons = document.getElementById('buttonContainer')
 	gameChoices.map((choice, i) => {
 		const btn = document.createElement('button')
 		btn.innerHTML = choice.text
-		btn.onclick = () => playGame(i, computerChooses(), gameChoices)
+		btn.onclick = () =>
+			playGame(i, computerChooses(numberOfOptions), gameChoices)
 		console.log(btn.onclick)
 		loadDefaultButtons.appendChild(btn)
 	})
@@ -21,7 +24,11 @@ const loadButtons = (gameChoices, lizardSpock) => {
 	const cpuBtn = document.createElement('button')
 	cpuBtn.innerHTML = 'auto'
 	cpuBtn.onclick = () =>
-		playGame(computerChooses(), computerChooses(), gameChoices)
+		playGame(
+			computerChooses(numberOfOptions),
+			computerChooses(numberOfOptions),
+			gameChoices
+		)
 	loadDefaultButtons.appendChild(cpuBtn)
 
 	// reset state button
@@ -37,7 +44,7 @@ const loadButtons = (gameChoices, lizardSpock) => {
 	lizSpockBtn.onclick = lizardSpock
 		? () => {
 				removeBtns()
-				loadButtons()
+				loadButtons(gameConstants)
 				// eslint-disable-next-line no-mixed-spaces-and-tabs
 		  }
 		: () => switchToLizardSpock()
