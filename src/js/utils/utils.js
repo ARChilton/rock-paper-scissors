@@ -1,4 +1,1 @@
-export const removeElement = (el) => {
-	const parent = el.parentNode
-	parent.removeChild(el)
-}
+export const removeElement = (el) => el.parentNode.removeChild(el)
